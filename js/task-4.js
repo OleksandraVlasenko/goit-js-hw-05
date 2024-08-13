@@ -1,8 +1,8 @@
 "use strict";
-const getTotalBalanceByGender = (users, gender) => users.reduce((previousValue, iterator) => {
-    const filtrated = users.slice().filter((user) => user.gender === gender);
-    return filtrated.reduce((value, index) => index.balance + value, 0)
-} , 0);
+const getTotalBalanceByGender = (users, gender) => users
+    .filter(user => user.gender === gender)
+    .reduce((totalBalance, user) => totalBalance + user.balance, 0);
+
     
 const clients = [
 	{
